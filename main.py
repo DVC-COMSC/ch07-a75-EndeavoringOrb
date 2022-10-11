@@ -10,8 +10,11 @@ if len(num1) > len(num2):
 else:
 	for i in range(len(num2)):
 		for j in range(len(num1)):
-			if num2[i+j] == num1[j]:
-				chain += 1
+			try:
+				if num2[i+j] == num1[j]:
+					chain += 1
+			except IndexError:
+				continue
 	if chain == len(num1):
 		print("True")
 	else:
